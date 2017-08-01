@@ -3,7 +3,7 @@ const express = require('express');
 const hbs = require('hbs');
 const fs = require('fs');
 var app = express();
-var port = 8080;
+var port = process.env.PORT || 3000;
 
 //Middle Ware
 hbs.registerPartials(__dirname + '/views/partials');
@@ -61,5 +61,5 @@ app.get("/contact", (req, res) => {
 });
 
 app.listen(port, () => {
-    console.log("Server started on port" + port);
+    console.log(`Server started on port ${port}`);
 });
